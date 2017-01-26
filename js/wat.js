@@ -13,12 +13,10 @@
     obj.addEventListener(type, func);
   };
 
-  /* init - you can init any event */
   throttle("resize", "optimizedResize");
 })();
 
 (function () {
-  var l = console.log;
   var boardSign = document.querySelector('.main-board-sign');
   var baseSizing = { width: 1600, height: 1000 };
   var ratio = baseSizing.width / baseSizing.height;
