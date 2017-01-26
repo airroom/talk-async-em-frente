@@ -1,3 +1,62 @@
-.icon-spin {
-  fill: #FFF;
+/* .reveal .slides {
+  max-width: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  top: 0 !important;
+} */
+
+/* <Base Stuff> */
+.reveal .slides {
+  width: 100% !important;
+  height: 100% !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  zoom: 1 !important;
+}
+
+.reveal .slides > section {
+  top: 0 !important;
+  padding: 20px;
+}
+
+
+.reveal .main-slide {
+  height: 100%;
+}
+
+
+.reveal .main-title {
+  text-align: left;
+  max-width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translate(0, -50%);
+  line-height: 1;
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 3px 3px 0px #000;
+}
+
+.reveal .main-board-sign {
+  position: absolute;
+  top: 9%;
+  left: 40.25%;
+  width: 37.6875vw;
+  height: 37.6875vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .main-board-sign__img {
+  fill: #000;
+  width: 40%;
+  height: 40%;
 }

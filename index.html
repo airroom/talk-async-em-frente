@@ -8,7 +8,8 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/night.css">
-		<link rel="stylesheet" href="css/talk.css">
+    <link rel="stylesheet" href="css/talk.css">
+		<link rel="stylesheet" href="css/animations.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -34,14 +35,15 @@
 
 			<div class="slides">
 
-				<section>
-          <h1>Async em Frente</h1>
-          <svg class="icon-spin"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-spin3"></use></svg>
+				<section class="main-slide" data-background="./img/road-bg-2.jpg" data-background-repeat="no-repeat" data-background-size="cover" data-background-position="0% 0%">
+          <h1 class="main-title">Async <br>em Frente</h1>
+          <div class="main-board-sign">
+            <svg class="icon-spin main-board-sign__img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-spin3"></use></svg>
+          </div>
         </section>
 
-
         <section>
-          <h2></h2>
+          <h2>Olar</h2>
         </section>
 
 
@@ -55,13 +57,17 @@
 		<script>
 			Reveal.initialize({
 				history: true,
+        transition: 'slide',
+        backgroundTransition: 'slide',
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
+
+    <script src="js/wat.js"></script>
 	</body>
 </html>
