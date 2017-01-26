@@ -6,10 +6,11 @@
 
 		<title>Async em Frente</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/night.css">
-		<link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/talk.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,27 +25,37 @@
 		</script>
 	</head>
 	<body>
-		<div class="reveal">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0;visibility:hidden">
-        <defs>
-          <symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" id="ico-spin3">
-            <path d="M493.556 -.063c-265.602 0 -482.306 209.741 -493.5 472.594 -.765 18.027 13 19.031 13 19.031l83.813 0c16.291 0 19.146 -9.297 19.531 -17.625 9.228 -199.317 175.315 -357.688 377.156 -357.688 107.739 0 204.915 45.163 273.719 117.563l-58.813 56.875c-10.23 12.319 -10.043 27.275 5.063 31.5l247.125 49.75c21.15 5.281 46.288 -10.747 37.656 -43.656l-58.375 -227.563c-1.482 -8.615 -15.924 -22.024 -29.406 -12.406l-64.094 60.031c-89.659 -91.567 -214.627 -148.406 -352.875 -148.406zm409.625 508.5c-16.291 0 -19.146 9.297 -19.531 17.625 -9.228 199.317 -175.315 357.688 -377.156 357.688 -107.739 0 -204.915 -45.132 -273.719 -117.531l58.813 -56.906c10.229 -12.319 10.043 -27.275 -5.063 -31.5l-247.125 -49.75c-21.15 -5.281 -46.288 10.747 -37.656 43.656l58.375 227.563c1.482 8.615 15.924 22.024 29.406 12.406l64.094 -60.031c89.659 91.567 214.627 148.406 352.875 148.406 265.602 0 482.306 -209.741 493.5 -472.594 .765 -18.027 -13 -19.031 -13 -19.031l-83.813 0z" />
-          </symbol>
-        </defs>
-      </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0;visibility:hidden">
+      <defs>
+        <symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" id="ico-spin3">
+          <path d="M493.556 -.063c-265.602 0 -482.306 209.741 -493.5 472.594 -.765 18.027 13 19.031 13 19.031l83.813 0c16.291 0 19.146 -9.297 19.531 -17.625 9.228 -199.317 175.315 -357.688 377.156 -357.688 107.739 0 204.915 45.163 273.719 117.563l-58.813 56.875c-10.23 12.319 -10.043 27.275 5.063 31.5l247.125 49.75c21.15 5.281 46.288 -10.747 37.656 -43.656l-58.375 -227.563c-1.482 -8.615 -15.924 -22.024 -29.406 -12.406l-64.094 60.031c-89.659 -91.567 -214.627 -148.406 -352.875 -148.406zm409.625 508.5c-16.291 0 -19.146 9.297 -19.531 17.625 -9.228 199.317 -175.315 357.688 -377.156 357.688 -107.739 0 -204.915 -45.132 -273.719 -117.531l58.813 -56.906c10.229 -12.319 10.043 -27.275 -5.063 -31.5l-247.125 -49.75c-21.15 -5.281 -46.288 10.747 -37.656 43.656l58.375 227.563c1.482 8.615 15.924 22.024 29.406 12.406l64.094 -60.031c89.659 91.567 214.627 148.406 352.875 148.406 265.602 0 482.306 -209.741 493.5 -472.594 .765 -18.027 -13 -19.031 -13 -19.031l-83.813 0z" />
+        </symbol>
+      </defs>
+    </svg>
+    <div class="reveal">
 
 			<div class="slides">
 
 				<section class="main-slide" data-background="./img/road-bg-2.jpg" data-background-repeat="no-repeat" data-background-size="cover" data-background-position="0% 0%">
           <h1 class="main-title">Async <br>em Frente</h1>
-          <div class="main-board-sign">
-            <!-- <img class="icon-spin main-board-sign__img" src="https://scontent.fgru5-1.fna.fbcdn.net/v/t1.0-9/11745756_958000430916972_2279554241731191533_n.jpg?oh=4269daf7e9bd83c00a5ec84c99891aa5&oe=590946B7" alt=""> -->
-            <svg class="icon-spin main-board-sign__img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-spin3"></use></svg>
-          </div>
+          <figure class="main-board-sign">
+            <svg class="main-board-sign__img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-spin3"></use></svg>
+          </figure>
         </section>
 
-        <section>
-          <h2>Olar</h2>
+        <section class="who-am-i-slide">
+          <figure class="who-am-i"></figure>
+          <div class="who-am-i__info">
+            <h2>Romário da Silva Lima</h2>
+            <ul>
+              <li><em><code>reles</code></em> Front-end <small class="fragment" style="font-family: 'Arvo', serif; vertical-align: middle;">(6+ EXP)</small></li>
+              <li>Indo para <span class="fragment highlight-purple">Easynvest</span></li>
+              <li>Gosto mais de batata e gosto mais de estudar</li>
+            </ul>
+            <figure class="charlinho fragment">
+              <img src="img/charlinho.png" alt="Charlinho, o menino que so queria estudar">
+            </figure>
+          </div>
         </section>
 
 
@@ -59,11 +70,12 @@
 			Reveal.initialize({
 				history: true,
         transition: 'slide',
-        backgroundTransition: 'slide',
+        // backgroundTransition: 'slide',
 				dependencies: [
           { src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
+					// { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});

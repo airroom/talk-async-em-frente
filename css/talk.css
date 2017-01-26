@@ -1,14 +1,5 @@
-/* .reveal .slides {
-  max-width: none !important;
-  width: 100% !important;
-  height: 100% !important;
-  pointer-events: none !important;
-  margin-top: 0 !important;
-  padding: 0 !important;
-  top: 0 !important;
-} */
-
 /* <Base Stuff> */
+
 .reveal .slides {
   width: 100% !important;
   height: 100% !important;
@@ -18,6 +9,7 @@
   left: 0 !important;
   transform: none !important;
   zoom: 1 !important;
+  text-align: left;
 }
 
 .reveal .slides > section {
@@ -25,11 +17,19 @@
   padding: 20px;
 }
 
-
 .reveal .main-slide {
   height: 100%;
 }
 
+.reveal section img {
+  border: none;
+  max-width: none;
+  max-height: none;
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+}
 
 .reveal .main-title {
   text-align: left;
@@ -59,4 +59,88 @@
   fill: #000;
   width: 45%;
   height: 45%;
+}
+
+.reveal .who-am-i-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.reveal .who-am-i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33vw;
+  height: 100vh;
+  background: url(../img/me.jpg) no-repeat center top;
+  background-size: cover;
+  box-sizing: border-box;
+  border-right: 3px solid #e7ad52;
+}
+
+.reveal .who-am-i:after {
+  content: '';
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  border-right: 3px dashed #e7ad52;
+}
+
+.who-am-i__info {
+  position: absolute;
+  top: 0;
+  left: 33vw;
+  width: 67vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  bottom: 0;
+}
+
+.who-am-i__info h2 {
+  padding: 10px;
+  border-top: 3px solid #e7ad52;
+  border-bottom: 3px solid #e7ad52;
+  box-sizing: border-box;
+}
+
+.who-am-i__info ul {
+  padding: 0 10px;
+  font-size: .8em !important;
+}
+
+.reveal .slides .fragment.highlight-purple {
+  opacity: 1;
+  visibility: inherit;
+}
+
+.reveal .slides .fragment.highlight-purple.visible  { color: #4e3c88; }
+
+.reveal .slides .charlinho {
+  position: absolute;
+  left: 0;
+  width: 67vw;
+  bottom: -100%;
+  opacity: 1 !important;
+  visibility: inherit !important;
+  transform: translateY(35%)
+}
+
+.reveal .slides .charlinho img {
+  margin: 0 auto;
+  display: block;
+}
+
+.reveal .slides .charlinho.visible { bottom: 0; }
+
+.reveal .slides .charlinho.visible img {
+  animation: charlinho-hi .3s infinite;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-in-out;
+  transform: rotate(0deg);
 }
