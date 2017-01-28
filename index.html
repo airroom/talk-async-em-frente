@@ -67,13 +67,32 @@
             <p stlye="flex: 0 1 auto;"><span class="f-arvo invert-highlight">Po<span style="color: red;">r</span><span style="color: green;">r</span><span style="color: blue;">r</span> quê?</span> </p>
             <div style="padding-left: 30px; font-size: 0.7em;">
               <p class="fragment fade-left">Atendender demandas</p>
-              <p class="fragment fade-left"><code>{facilitar a leitura}</code></p>
+              <p class="fragment fade-left"><code>{facilitar a leitura do código}</code></p>
             </div>
           </div>
         </section>
 
-        <section>
-          <h2>Call<code>backs</code></h2>
+        <section data-background="#6B4920" class="align-center-slide text-center">
+          <h1>Call<code>backs</code></h1>
+          <p>A base</p>
+        </section>
+
+        <section class="align-center-slide text-center">
+          <h2>Ana<code>tomia</code></h2>
+          <div class="stitched-code">
+            <pre>
+              <code class="javascript" data-trim>
+getSomething(somethingId, (err, data) => {
+  if (err) {
+    // :(
+    return
+  }
+  // tudo certo :)
+})
+              </code>
+            </pre>
+          </div>
+          <p class="fragment"><small><code>{vulgo Node Style}</code></small></p>
         </section>
 
 
@@ -99,5 +118,6 @@
 		</script>
 
     <script src="js/wat.js"></script>
+    <script src="//localhost:35729/livereload.js"></script>
 	</body>
 </html>
