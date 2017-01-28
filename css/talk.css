@@ -99,6 +99,37 @@
 
 /* </Base Stuff> */
 
+.FAILSHOPZ {
+  position: relative;
+  display: inline-block;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+.FAILSHOPZ span {
+  position: relative;
+  display: inline-block !important;
+  letter-spacing: 0.1em !important;
+  background: #ed1c24 !important;
+  padding: 20px !important;
+  line-height: 1 !important;
+  z-index: 10;
+  margin-bottom: 35px !important;
+}
+
+.FAILSHOPZ:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  right: 39%;
+  bottom: 0%;
+  background: #ed1c24;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+
 .JS {
   display: inline-block;
   background: #f3df49;
