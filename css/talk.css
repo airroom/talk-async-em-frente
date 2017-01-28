@@ -1,4 +1,5 @@
 /* <Base Stuff> */
+.f-arvo { font-family: 'Arvo', serif !important; }
 
 .reveal .slides {
   width: 100% !important;
@@ -29,6 +30,33 @@
   height: auto;
   background: none;
   box-shadow: none;
+}
+
+.reveal .slides .align-center-slide {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* </Base Stuff> */
+
+.JS {
+  display: inline-block;
+  background: #f3df49;
+  color: #2e2e2c;
+  line-height: 1 !important;
+  font-weight: bold !important;
+  padding: 5px !important;
+}
+
+.invert-highlight {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  padding: 0.2em !important;
+  background: #eee !important;
+  color: #111 !important;
 }
 
 .reveal .main-title {
