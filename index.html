@@ -323,7 +323,7 @@ function *fib() {
 
 <section class="align-column-justify-center align-items-center" style="padding: 0px;">
   <h3 style="position: absolute; top: 50%; left: 0; right: 0; text-align: center; transform: translateY(-50%); z-index: 1;">Generator tem dupla personalidade</h3>
-  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #E74C3C; flex-direction: column;" class="fragment">
+  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #E74C3C; flex-direction: column;" class="fragment fade-right">
     <h3 class="f-arvo" style="align-self: flex-start;">Iterator</h3>
     <p style="font-size: 0.6em; align-self: flex-start;">
       <span class="invert-highlight f-arvo" style="width: 80px; margin-right: 10px; text-align: center;">yield</span>
@@ -338,7 +338,7 @@ function *fib() {
       <code>if (generator.next().done) { }</code>
     </p>
   </div>
-  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #2980B9;  flex-direction: column;" class="fragment">
+  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #2980B9;  flex-direction: column;" class="fragment fade-left">
     <h3 class="f-arvo" style="align-self: flex-end;">Observer</h3>
     <p style="font-size: 0.6em; align-self: flex-end;">
       <code>generator.next(10)</code>
@@ -355,6 +355,146 @@ function *fib() {
   </div>
 </section>
 
+<section class="align-column-justify-center">
+<h4 style="text-align: center;">Interação <code class="invert-highlight">async</code> com cara de <code class="invert-highlight">sync</code></h4>
+<div class="stitched-code">
+        <pre><code class="javascript" data-trim data-noescape>
+function *getUserAddress(userId) {
+  const userInfo = yield getUserInfo(userId)
+  const address = yield cep(userInfo.cep)
+
+  return address
+}
+
+<span class="fragment">spawn(getUserAddress('zulu-zulu-1')).then().catch()</span>
+      </code></pre>
+  </div>
+</section>
+
+<section class="align-column-justify-center align-items-center" style="padding: 0px;">
+  <h3 style="position: absolute; top: 3%; left: 0; right: 0; text-align: center; transform:z-index: 1;"><code>async</code> iteration</h3>
+  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #000; flex-direction: column;">
+    <h3 class="f-arvo" style="align-self: flex-start;">Consumer</h3>
+    <div class="stitched-code" style="width: 100%;">
+      <pre style="width: 100%;"><code class="javascript" data-trim data-noescape style="height: 80px; position: relative; overflow: hidden;">
+        <span class="fragment code-special-fragment" data-fragment-index="1">
+          const generator = getUserAddress('zulu-zulu-1')
+        </span>
+        <span class="fragment code-special-fragment" data-fragment-index="2">
+          let result = generator.next()
+        </span>
+        <span class="fragment code-special-fragment" data-fragment-index="3">
+          result.then(/* ... */)
+        </span>
+        <span class="fragment code-special-fragment" data-fragment-index="4">
+          { cep: '05361-000' }
+        </span>
+        <span class="fragment code-special-fragment" data-fragment-index="5">
+          result = generator.next({ cep: '05361-000' })
+        </span>
+        <span class="fragment code-special-fragment" data-fragment-index="7">
+          result.then(/* ... */)
+        </span>
+        <span class="fragment code-special-fragment" data-fragment-index="8">
+          { cep: '05361000', state: 'SP', /* ... */ }
+        </span>
+        <span class="fragment code-special-fragment final" data-fragment-index="9">
+          result = { cep: '05361000', state: 'SP', /* ... */ }
+        </span>
+      </code></pre>
+    </div>
+  </div>
+  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #000;  flex-direction: column;">
+    <h3 class="f-arvo" style="align-self: flex-end;">Producer</h3>
+    <div class="stitched-code" style="width: 100%;">
+      <pre style="width: 100%;"><code class="javascript" data-trim data-noescape style="height: 80px; position: relative; overflow: hidden;">
+        <span class="fragment code-special-fragment" data-fragment-index="2">
+          const userInfo = yield getUserInfo('zulu-zulu-1')
+        </span>
+        <span class="fragment code-special-fragment" data-fragment-index="5">
+          const userInfo = { cep: '05361-000' }
+        </span>
+        <span class="fragment code-special-fragment" data-fragment-index="6">
+          const address = yield cep(userInfo.cep)
+        </span>
+        <span class="fragment code-special-fragment" data-fragment-index="8">
+          const address = { cep: '05361000', state: 'SP', /* ... */ }
+        </span>
+      </code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="align-column-justify-center align-items-center" style="padding: 0px;">
+  <h3 style="position: absolute; top: 3%; left: 0; right: 0; text-align: center; transform:z-index: 1;"><code>async</code> iteration</h3>
+  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #000; flex-direction: column;">
+    <h3 class="f-arvo">Consumer</h3>
+    <div class="stitched-code" style="width: 100%;">
+      <pre><code class="javascript" data-trim data-noescape>
+function spawn(generator) {
+  return new Promise((resolve, reject) => {
+    const onResult = lastPromiseResult => {
+      const { value, done } = generator.next(lastPromiseResult)
+      if (!done) {
+        value.then(onResult, reject)
+        return
+      }
+      resolve(value)
+    }
+    onResult()
+  })
+}
+      </code></pre>
+    </div>
+  </div>
+  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #000;  flex-direction: column; align-self: flex-start;">
+    <h3 class="f-arvo" style="">Producer</h3>
+    <div class="stitched-code" style="width: 100%;">
+      <pre style="width: 100%;"><code class="javascript" data-trim data-noescape>
+function *getUserAddress(userId) {
+  const userInfo = yield getUserInfo(userId)
+  const address = yield cep(userInfo.cep)
+
+  return address
+}
+
+spawn(getUserAddress('zulu-zulu-1'))
+      </code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="align-column-justify-center">
+  <div class="align-column-justify-center align-items-center">
+
+    <div class="stitched-code">
+            <pre><code class="javascript" data-trim data-noescape>
+function *getUserAddress(userId) {
+  const userInfo = yield getUserInfo(userId)
+  const address = yield cep(userInfo.cep)
+
+  return address
+}
+
+function spawn(generator) {
+  return new Promise((resolve, reject) => {
+    const onResult = lastPromiseResult => {
+      const { value, done } = generator.next(lastPromiseResult)
+      if (!done) {
+        value.then(onResult, reject)
+        return
+      }
+      resolve(value)
+    }
+    onResult()
+  })
+}
+
+spawn(getUserAddress('zulu-zulu-1')).then().catch()
+          </code></pre>
+      </div>
+  </div>
+</section>
 
 			</div>
 		</div>

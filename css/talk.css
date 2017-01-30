@@ -320,3 +320,22 @@
   animation-timing-function: ease-in-out;
   transform: rotate(0deg);
 }
+
+.code-special-fragment {
+  position: absolute;
+  opacity: 0 !important;
+  top: -30%;
+  left: 0;
+}
+
+.code-special-fragment.visible {
+  opacity: 0 !important;
+  top: 30%;
+}
+
+.code-special-fragment.visible.final { opacity: 1 !important; top: 0 !important; }
+
+.code-special-fragment.current-fragment {
+  opacity: 1 !important;
+  top: 0 !important;
+}
