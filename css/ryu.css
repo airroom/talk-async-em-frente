@@ -1,0 +1,90 @@
+@keyframes stance {
+  0% { background-position: -3600px 0px; }
+  100% { background-position: -4600px 0px; }
+}
+
+@keyframes charge {
+  from { background-position: -1600px 0px; }
+  to { background-position: -3200px 0px; }
+}
+
+@keyframes hadouken {
+  from { background-position: -1600px 0px; }
+  to { background-position: -3600px 0px; }
+}
+
+@keyframes ball {
+  0% { background-position: 0px 0px; }
+  100% { background-position: -1600px 0px; }
+}
+
+@keyframes move-ball{
+  0% { left: 0%; }
+  70% { opacity: 1; }
+  100% { left: 120%; opacity: 0; }
+}
+
+
+.ryu {
+  position: relative;
+  display: inline-block;
+  background: url(../img/ryu-sprite-0.png) no-repeat;
+  width: 200px;
+  height: 110px;
+  animation: stance steps(5, end) .7s infinite;
+  transform: scale(1.5);
+}
+
+.ryu.charge {
+  animation: charge steps(8) .7s infinite;
+}
+
+.ryu.hadouken {
+  animation: hadouken steps(10) 1s forwards;
+}
+
+.ryu.hadouken-2test {
+  background-position: -3400px 0px;
+  animation: none;
+  // animation: hadouken steps(10) 1s infinite;
+}
+
+.ryu-fragments {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: none !important;
+  position: relative !important;
+}
+
+.ryu-ball {
+  position: relative;
+  display: inline-block;
+  background: url(../img/ryu-sprite-0.png) no-repeat;
+  width: 200px;
+  height: 54px;
+  animation: ball steps(8) .6s infinite;
+  transform: scale(1.5);
+}
+
+.cb-ryu-wrapper {
+  position: relative;
+  transform: translateY(85%);
+  z-index: 99999;
+}
+
+#cb-ryu-ball {
+  position: absolute;
+  top: 6%;
+  left: 15%;
+  transition: opacity 1s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#cb-ryu-ball.active {
+  animation: move-ball 1s forwards;
+  opacity: 1;
+  z-index: 100;
+  visibility: visible;
+  animation-timing-function: linear;
+}

@@ -161,7 +161,9 @@ body {
   padding: 5px;
   overflow: auto;
   max-height: 400px;
-  word-wrap: normal; }
+  word-wrap: normal;
+  max-width: 100%;
+  }
 
 .reveal table {
   margin: auto;

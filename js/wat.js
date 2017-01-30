@@ -17,17 +17,17 @@
 })();
 
 (function () {
-  var boardSign = document.querySelector('.main-board-sign');
-  var baseSizing = { width: 1600, height: 1000 };
-  var ratio = baseSizing.width / baseSizing.height;
-  var boardSignSize = 603;
-  var originalCoords = { x: 0.4125, y: 0.08  };
+  const boardSign = document.querySelector('.main-board-sign');
+  const baseSizing = { width: 1600, height: 1000 };
+  const ratio = baseSizing.width / baseSizing.height;
+  const boardSignSize = 603;
+  const originalCoords = { x: 0.4125, y: 0.08  };
 
-  var setBoardSize = () => {
-    var innerWidth = window.innerWidth;
-    var innerHeight = window.innerHeight;
-    var currentRatio = innerWidth / innerHeight;
-    var currentWidth, currentHeight, currentBoardSize;
+  const setBoardSize = () => {
+    const innerWidth = window.innerWidth;
+    const innerHeight = window.innerHeight;
+    const currentRatio = innerWidth / innerHeight;
+    let currentWidth, currentHeight, currentBoardSize;
 
     if (currentRatio > ratio) {
       currentWidth = innerWidth;

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/theme/night.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/talk.css">
+    <link rel="stylesheet" href="css/ryu.css">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -79,9 +80,20 @@
 
         <section class="align-center-slide text-center">
           <h2>Ana<code>tomia</code></h2>
-          <div class="stitched-code">
-            <pre>
-              <code class="javascript" data-trim>
+          <div style="display: flex; flex: 0 1 auto; justify-content: center; margin-bottom: 20px;">
+            <div>
+              <div class="stitched-code" style="margin: 0 20px;">
+                <pre>
+                  <code class="javascript" data-trim>
+setTimeout(() => console.log('hei'), 2000)
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div style="margin: 0 20px;">
+              <div class="stitched-code">
+                <pre>
+                  <code class="javascript" data-trim>
 getSomething(somethingId, (err, data) => {
   if (err) {
     // :(
@@ -89,8 +101,17 @@ getSomething(somethingId, (err, data) => {
   }
   // tudo certo :)
 })
-              </code>
-            </pre>
+                  </code>
+                </pre>
+              </div>
+              <div class="stitched-code" style="margin: 20px 0">
+                <pre>
+                  <code class="javascript" data-trim>
+getSomething(somethingId, success, failure)
+                  </code>
+                </pre>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -102,6 +123,46 @@ getSomething(somethingId, (err, data) => {
           </div>
         </section>
 
+        <section class="cb-slide align-center-slide">
+          <h2>Call<code>back</code> Hell <small style="display: inline-block; vertical-align: middle; text-decoration: line-through;"><code>(Ryu)</code></small></h2>
+          <div class="align-center-slide align-items-center">
+            <div style="flex: 0 1 50%;">
+              <div class="cb-ryu-wrapper fragment">
+                <div id="ryu-charge" class="ryu-fragments fragment">
+                  <div id="ryu-hadouken" class="ryu-fragments fragment">
+                    <span id="cb-ryu" class="ryu"></span>
+                    <span id="cb-ryu-ball"><span class="ryu-ball"></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <div style="flex: 0 1 50%;">
+               <div class="stitched-code">
+                    <pre>
+                      <code class="javascript" data-trim>
+getUserInfo(userId, (err, userInfo) => {
+ if (err) {
+   return
+ }
+
+ getFoo(userInfo.attributeId, (err, foo) => {
+   // ...
+   getBar(foo, (err, bar) => {
+     // ...
+     getAlfredinho(bar, (err, alfredinho) => {
+       // ...
+       giveMySoulBack()
+     })
+   })
+ })
+})
+                      </code>
+                    </pre>
+                  </div>
+                         </div>
+             </div>
+        </section>
+
 
 			</div>
 		</div>
@@ -110,6 +171,7 @@ getSomething(somethingId, (err, data) => {
 		<script src="js/reveal.js"></script>
 
 		<script>
+      window.l = console.log;
 			Reveal.initialize({
 				history: true,
         transition: 'slide',
@@ -123,6 +185,53 @@ getSomething(somethingId, (err, data) => {
 				]
 			});
 		</script>
+
+    <script>
+      (function() {
+        const ryuElement = document.getElementById('cb-ryu');
+        const ryuBallElement = document.getElementById('cb-ryu-ball');
+
+        const e = () => {
+          ryuElement.classList.remove('charge', 'hadouken');
+          ryuBallElement.classList.add('active');
+        };
+
+        const anims = {
+          'ryu-charge-add'() {
+            ryuElement.classList.add('charge');
+          },
+          'ryu-charge-remove'() {
+            ryuElement.classList.remove('charge');
+          },
+          'ryu-hadouken-add'() {
+            ryuElement.classList.add('hadouken');
+
+            ryuElement.addEventListener('animationend', e, false);
+          },
+          'ryu-hadouken-remove'() {
+            ryuElement.classList.remove('hadouken');
+            ryuElement.classList.add('charge');
+            ryuBallElement.classList.remove('active');
+            ryuElement.removeEventListener('animationend', e, false);
+          }
+        };
+
+        Reveal.addEventListener('fragmentshown', (event) => {
+          if (event.fragment.classList.contains('ryu-fragments')) {
+            const method = event.fragment.id + '-add';
+            anims[method] && anims[method]()
+          }
+        });
+
+        Reveal.addEventListener('fragmenthidden', (event) => {
+          if (event.fragment.classList.contains('ryu-fragments')) {
+             const method = event.fragment.id + '-remove';
+            anims[method] && anims[method]()
+          }
+        });
+
+      })();
+    </script>
 
     <script src="js/wat.js"></script>
     <script src="//localhost:35729/livereload.js"></script>
