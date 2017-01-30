@@ -81,19 +81,9 @@
         <section class="align-center-slide text-center">
           <h2>Ana<code>tomia</code></h2>
           <div style="display: flex; flex: 0 1 auto; justify-content: center; margin-bottom: 20px;">
-            <div>
-              <div class="stitched-code" style="margin: 0 20px;">
-                <pre>
-                  <code class="javascript" data-trim>
-setTimeout(() => console.log('hei'), 2000)
-                  </code>
-                </pre>
-              </div>
-            </div>
             <div style="margin: 0 20px;">
               <div class="stitched-code">
-                <pre>
-                  <code class="javascript" data-trim>
+                <pre><code class="javascript" data-trim>
 getSomething(somethingId, (err, data) => {
   if (err) {
     // :(
@@ -101,21 +91,18 @@ getSomething(somethingId, (err, data) => {
   }
   // tudo certo :)
 })
-                  </code>
-                </pre>
+                  </code></pre>
               </div>
               <div class="stitched-code" style="margin: 20px 0">
-                <pre>
-                  <code class="javascript" data-trim>
+                <pre><code class="javascript" data-trim>
 getSomething(somethingId, success, failure)
-                  </code>
-                </pre>
+                  </code></pre>
               </div>
             </div>
           </div>
         </section>
 
-        <section data-background="img/compilate-failshop.gif" class="align-center-slide text-center">
+        <section data-background="img/compilate-failshop.gif" class="align-center-slide text-center" data-background-size="contain">
           <div>
             <h2 class="FAILSHOPZ">
               <span>FAILSHOP</span>
@@ -138,8 +125,7 @@ getSomething(somethingId, success, failure)
             </div>
              <div style="flex: 0 1 50%;">
                <div class="stitched-code">
-                    <pre>
-                      <code class="javascript" data-trim>
+                    <pre><code class="javascript" data-trim>
 getUserInfo(userId, (err, userInfo) => {
  if (err) {
    return
@@ -151,18 +137,111 @@ getUserInfo(userId, (err, userInfo) => {
      // ...
      getAlfredinho(bar, (err, alfredinho) => {
        // ...
-       giveMySoulBack()
+       giveMySoulBack(alfredinho, (err, soul) => {
+        // ...
+        pursuitFreedom(soul)
+       })
      })
    })
  })
 })
-                      </code>
-                    </pre>
+                      </code></pre>
                   </div>
                          </div>
              </div>
         </section>
 
+        <section data-background="#6B4920" class="align-center-slide text-center">
+          <h1>Pro<code>mises</code></h1>
+        </section>
+
+        <section class="align-center-slide align-items-center">
+          <h3 class="f-arvo" style="flex: 0 1 auto;">Promise é igual a um...</h3>
+          <div style="display: flex; flex: 1 1 auto;">
+            <figure class="image-w-border fragment">
+              <img src="img/sorvete.jpg" alt="">
+            </figure>
+          </div>
+        </section>
+
+<section class="align-center-slide align-items-center">
+  <div style="flex: 0 1 auto;">
+    <div class="stitched-code ">
+      <pre><code class="javascript" data-trim>
+function pegarPoteDeSorvete(pote) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (pote.conteudo instanceof Sorvete) {
+        resolve(pote.conteudo)
+        return
+      }
+
+      reject(pote.conteudo)
+    }, 5000)
+  })
+}
+
+pegarPoteDeSorvete(poteDaGeladeira)
+.then(sorvete => console.log('Hoje Tem :)'))
+.catch(feijao => console.log('Hoje Tem Janta :('))
+      </code></pre>
+    </div>
+  </div>
+  <div style="flex: 0 1 auto;">
+    <figure class="image-w-border fragment" style="display: block !important; width: 40%; margin: 20px auto !important; ">
+      <img src="img/sorvete-sorvete.jpg" alt="" style="width: 100%;">
+      <span class="crazy-overlay f-arvo" style="background: rgba(0, 163, 136, .3);">.then</span>
+    </figure>
+     <figure class="image-w-border fragment" style="display: block !important; width: 40%; margin: 20px auto !important; ">
+      <img src="img/sorvete-feijao.jpg" alt="" style="width: 100%;">
+      <span class="crazy-overlay f-arvo" style="background: rgba(255, 97, 56, .3);">.catch</span>
+    </figure>
+  </div>
+</section>
+
+<section class="align-items-center align-center-slide">
+  <div style="margin: 0 20px;">
+    <div class="stitched-code">
+      <pre><code class="javascript" data-trim>
+function getUserAddress(userId, cb) {
+  getUserInfo(userId, (userInfoError, userInfo) => {
+    if (userInfoError) {
+      cb(userInfoError)
+      return
+    }
+
+    cep(userInfo.cep, (cepError, address) => {
+      if (cepError) {
+        cb(cepError)
+        return
+      }
+
+      cb(null, address)
+    })
+  })
+}
+                      </code></pre>
+    </div>
+  </div>
+  <div style="margin: 0 20px;">
+    <div class="stitched-code fragment">
+      <pre><code class="javascript" data-trim>
+function getUserAddress(userId) {
+  getUserInfo(userId)
+  .then(userInfo => cep(userInfo.cep))
+  .catch(handleError)
+}
+      </code></pre>
+    </div>
+  </div>
+</section>
+
+<section data-background="http://replygif.net/i/1082.gif" data-background-size="contain"></section>
+
+<section data-background="rgba(0, 163, 136, 1)" class="align-center-slide text-center">
+    <h2 class="f-arvo">Mããããs... <small>eles querem mais</small></h2>
+    <p>Querem escrever código <code><strong>async</strong></code> de uma maneira <code><strong>sync</strong></code></p>
+  </section>
 
 			</div>
 		</div>

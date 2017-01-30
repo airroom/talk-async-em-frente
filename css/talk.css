@@ -47,7 +47,6 @@
   margin: 0;
   display: inline-block;
   box-shadow: 0 0 2px 1px rgba(238, 238, 238, 0.4);
-  /* max-width: 30%; */
 }
 
 .reveal .slides .stitched-code pre:before {
@@ -80,10 +79,15 @@
   position: relative;
   background: none;
   padding: 0;
-  margin: -1em 0 -2em;
+  /* margin: -1em 0 -2em; */
   z-index: 10;
   text-shadow: 2px 2px 3px #000;
   max-height: none;
+  font-size: 20px;
+}
+
+.reveal .slides .stitched-code--full pre {
+ width: 100%;
 }
 
 .reveal .slides .align-center-slide {
@@ -105,6 +109,53 @@
   align-content: center;
 }
 
+.image-w-border {
+  position: relative !important;
+  margin: 0 auto !important;
+  display: inline-block !important;
+  background: #2E2E2E;
+  padding: 15px !important;
+  box-shadow: 0px 3px 3px #000;
+}
+
+.image-w-border:before,
+.image-w-border:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 2px dashed rgba(238, 238, 238, 0.4);
+  z-index: 10;
+}
+.image-w-border:after {
+  border-color: #111;
+  z-index: 5;
+  filter: blur(3px);
+}
+
+.image-w-border img {
+  position: relative;
+  margin: 0 !important;
+  z-index: 20;
+  display: block;
+  // border-radius: 20px;
+}
+
+.crazy-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7em !important;
+}
 
 /* </Base Stuff> */
 
