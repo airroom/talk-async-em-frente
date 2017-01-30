@@ -116,8 +116,8 @@ getSomething(somethingId, success, failure)
         <section class="cb-slide align-column-justify-center">
           <h2>Call<code>back</code> Hell <small style="display: inline-block; vertical-align: middle; text-decoration: line-through;"><code>(Ryu)</code></small></h2>
           <div class="align-column-justify-center align-items-center">
-            <div style="flex: 0 1 50%;">
-              <div class="cb-ryu-wrapper fragment">
+            <div style="flex: 0 1 50%; position: relative; z-index: 100;">
+              <div class="cb-ryu-wrapper">
                 <div id="ryu-charge" class="ryu-fragments fragment">
                   <div id="ryu-hadouken" class="ryu-fragments fragment">
                     <span id="cb-ryu" class="ryu"></span>
@@ -126,7 +126,7 @@ getSomething(somethingId, success, failure)
                 </div>
               </div>
             </div>
-             <div style="flex: 0 1 50%;">
+             <div style="flex: 0 1 50%;  position: relative; z-index: 50;">
                <div class="stitched-code">
                     <pre><code class="javascript" data-trim>
 getUserInfo(userId, (err, userInfo) => {
