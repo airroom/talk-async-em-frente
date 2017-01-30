@@ -1,4 +1,7 @@
 /* <Base Stuff> */
+
+* { transform: translateZ(0px); -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000; }
 .f-arvo { font-family: 'Arvo', serif !important; }
 
 .reveal .slides {
