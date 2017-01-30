@@ -295,14 +295,14 @@ function *aleatorio() {
 }
 
 const iterator = aleatorio(); // {}
-iterator.next() // { value: 'Eu', done: false }
-iterator.next() // { value: 'gosto de', done: false }
-iterator.next() // { value: 'batata.', done: true }
+<span class="fragment">iterator.next() // { value: 'Eu', done: false }</span>
+<span class="fragment">iterator.next() // { value: 'gosto de', done: false }</span>
+<span class="fragment">iterator.next() // { value: 'batata.', done: true }</span>
           </code></pre>
       </div>
     </div>
     <div style="margin: 0 auto;">
-      <div class="stitched-code fragment">
+      <div class="stitched-code fragment fade-right">
         <pre><code class="javascript" data-trim data-noescape>
 function *fib() {
   let current = 0
@@ -318,6 +318,40 @@ function *fib() {
       </code></pre>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="align-column-justify-center align-items-center" style="padding: 0px;">
+  <h3 style="position: absolute; top: 50%; left: 0; right: 0; text-align: center; transform: translateY(-50%); z-index: 1;">Generator tem dupla personalidade</h3>
+  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #E74C3C; flex-direction: column;" class="fragment">
+    <h3 class="f-arvo" style="align-self: flex-start;">Iterator</h3>
+    <p style="font-size: 0.6em; align-self: flex-start;">
+      <span class="invert-highlight f-arvo" style="width: 80px; margin-right: 10px; text-align: center;">yield</span>
+      <code>generator.next().value</code>
+    </p>
+    <p style="font-size: 0.6em; align-self: flex-start;">
+      <span class="invert-highlight f-arvo" style="width: 80px; margin-right: 10px; text-align: center;">throw</span>
+      <code>try { generator.next() } catch(err) { ... } </code>
+    </p>
+    <p style="font-size: 0.6em; align-self: flex-start;">
+      <span class="invert-highlight f-arvo" style="width: 80px; margin-right: 10px; text-align: center;">done</span>
+      <code>if (generator.next().done) { }</code>
+    </p>
+  </div>
+  <div style="position: relative; z-index: 10; height: 100%; flex: 0 1 50%; padding: 20px; box-sizing: border-box; justify-content: center; display: flex; align-items: center; background: #2980B9;  flex-direction: column;" class="fragment">
+    <h3 class="f-arvo" style="align-self: flex-end;">Observer</h3>
+    <p style="font-size: 0.6em; align-self: flex-end;">
+      <code>generator.next(10)</code>
+      <span class="invert-highlight f-arvo" style="width: 80px; margin-left: 10px; text-align: center;">data</span>
+    </p>
+    <p style="font-size: 0.6em; align-self: flex-end;">
+      <code>generator.throw('não tem biscoito') </code>
+      <span class="invert-highlight f-arvo" style="width: 80px; margin-left: 10px; text-align: center;">error</span>
+    </p>
+    <p style="font-size: 0.6em; align-self: flex-end;">
+      <code>generator.returns(10)</code>
+      <span class="invert-highlight f-arvo" style="width: 80px; margin-left: 10px; text-align: center;">return</span>
+    </p>
   </div>
 </section>
 
