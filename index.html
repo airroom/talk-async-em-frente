@@ -55,8 +55,8 @@
           <div class="who-am-i__info">
             <h2>Romário da Silva Lima</h2>
             <ul>
-              <li><em><code>reles</code></em> Front-end <small class="fragment" style="font-family: 'Arvo', serif; vertical-align: middle;">(6+ EXP)</small></li>
-              <li>Indo para <span class="fragment highlight-purple">Easynvest</span></li>
+              <li><em><code>reles</code></em> Front-end <small data-fragment-index="0" class="fragment" style="font-family: 'Arvo', serif; vertical-align: middle;">(6+ EXP)</small></li>
+              <li>Ex-<span data-fragment-index="1" class="fragment highlight-wine">Vizir</span>, indo para <span data-fragment-index="1" class="fragment highlight-purple">Easynvest</span></li>
               <li>Gosto de batata e gosto de estudar</li>
             </ul>
             <figure class="charlinho fragment">
@@ -464,36 +464,71 @@ spawn(getUserAddress('zulu-zulu-1'))
   </div>
 </section>
 
-<section class="align-column-justify-center">
-  <div class="align-column-justify-center align-items-center">
+<section data-background="#6B4920" class="align-column-justify-center text-center">
+  <h1>As<code>ync / Awa</code>it</h1>
+  <p class="fragment f-arvo"><small class="invert-highlight">No babel mais perto de você</small></p>
+</section>
 
+<section class="align-column-justify-center">
+  <div>
+    <h2><div class="JS">TC39</div> Mat<code>urity Stag</code>es</h2>
+  </div>
+  <div>
+    <p>
+      <span class="invert-highlight">Stage 0</span>
+      <code>Strawman</code>
+    </p>
+    <p>
+      <span class="invert-highlight">Stage 1</span>
+      <code>Proposal</code>
+    </p>
+    <p>
+      <span class="invert-highlight">Stage 2</span>
+      <code>Draft</code>
+    </p>
+    <p>
+      <span class="invert-highlight">Stage 3</span>
+      <code>Candidate</code>
+    </p>
+    <p class="fragment fragmento-legal" style="opacity: 1 !important; visibility: visible !important;">
+      <span class="invert-highlight">Stage 4</span>
+      <code>Finished</code>
+    </p>
+  </div>
+</section>
+
+
+<section class="align-column-justify-center text-center">
+  <div class="fragment carreta-bg"></div>
+  <h2 style="position: relative; z-index: 5; text-align: center;">Ana<code>tomia</code></h2>
+  <div style="position: relative; z-index: 5; ">
     <div class="stitched-code">
-            <pre><code class="javascript" data-trim data-noescape>
-function *getUserAddress(userId) {
-  const userInfo = yield getUserInfo(userId)
-  const address = yield cep(userInfo.cep)
+      <pre><code class="javascript" data-trim data-noescape>
+async function getUserAddress(userId) {
+  const userInfo = await getUserInfo(userId)
+  const address = await cep(userInfo.cep)
 
   return address
 }
-
-function spawn(generator) {
-  return new Promise((resolve, reject) => {
-    const onResult = lastPromiseResult => {
-      const { value, done } = generator.next(lastPromiseResult)
-      if (!done) {
-        value.then(onResult, reject)
-        return
-      }
-      resolve(value)
-    }
-    onResult()
-  })
-}
-
-spawn(getUserAddress('zulu-zulu-1')).then().catch()
-          </code></pre>
-      </div>
+      </code></pre>
+    </div>
   </div>
+  <p style="position: relative; z-index: 5; " class="fragment fade-down"><code>{Syntax Sugar}</code></p>
+</section>
+
+<section data-background="rgba(0, 163, 136, 1)" class="align-column-justify-center text-center">
+  <h2 class="f-arvo">Há muito mais por aí...</h2>
+  <p>
+    <span class="invert-highlight f-arvo">{ async function *() }</span>
+    <span class="invert-highlight f-arvo">{ for await (const x  of iterable) }</span>
+    <span class="invert-highlight f-arvo">{ Observables (RxJS) }</span>
+  </p>
+</section>
+
+<section class="align-column-justify-center text-center">
+  <figure class="image-w-border">
+    <img src="img/esmagares-a-rata.jpg" alt="">
+  </figure>
 </section>
 
 			</div>

@@ -290,12 +290,14 @@
   font-size: .8em !important;
 }
 
-.reveal .slides .fragment.highlight-purple {
+.reveal .slides .fragment.highlight-purple,
+.reveal .slides .fragment.highlight-wine {
   opacity: 1;
   visibility: inherit;
 }
 
 .reveal .slides .fragment.highlight-purple.visible  { color: #4e3c88; }
+.reveal .slides .fragment.highlight-wine.visible  { color: #f44f51; }
 
 .reveal .slides .charlinho {
   position: absolute;
@@ -338,4 +340,22 @@
 .code-special-fragment.current-fragment {
   opacity: 1 !important;
   top: 0 !important;
+}
+
+.fragmento-legal {
+  transition: all 0.3s;
+  background: none;
+  background: rgba(231, 173, 82, 0);
+}
+
+.fragmento-legal.visible {
+  background-color: rgba(231, 173, 82, .7) !important;
+}
+
+.carreta-bg {
+  background-image: url(../img/carreta-furacao.gif); background-size: cover; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;
+}
+
+.carreta-bg.visible {
+  opacity: 0.6 !important;
 }
