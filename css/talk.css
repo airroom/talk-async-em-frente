@@ -90,7 +90,7 @@
  width: 100%;
 }
 
-.reveal .slides .align-center-slide {
+.reveal .slides .align-column-justify-center {
   display: flex !important;
   flex-direction: column;
   justify-content: center;

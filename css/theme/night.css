@@ -50,7 +50,8 @@ body {
   letter-spacing: -0.03em;
   text-transform: none;
   text-shadow: none;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  }
 
 .reveal h1 {
   font-size: 3.77em; }
