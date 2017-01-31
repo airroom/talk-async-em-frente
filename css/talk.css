@@ -2,6 +2,7 @@
 
 * { transform: translateZ(0px); -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000; }
+
 .f-arvo { font-family: 'Arvo', serif !important; }
 
 .reveal .slides {
@@ -208,6 +209,11 @@
   padding: 0.2em !important;
   background: #eee !important;
   color: #111 !important;
+  transition: all 0.3s !important;
+}
+.invert-highlight--link:hover {
+  color: #eee !important;
+  background: rgba(0,0,0,0) !important;
 }
 
 .reveal .main-title {
